@@ -1,0 +1,5 @@
+bin
+vendor
+composer.lock
+/phpspec.yml
+.php_cs.cache

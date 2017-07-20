@@ -1,0 +1,5 @@
+## Rename this file in phpspec.yml to customize the phpspec configuration
+suites:
+    LeadClient:
+        namespace: Omni\Lead
+        psr4_prefix: Omni\Lead
