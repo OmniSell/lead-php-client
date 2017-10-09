@@ -41,6 +41,21 @@ $clientBuilder = new \Omni\Lead\LeadClientBuilder('http://localhost/');
 $client = $clientBuilder->buildAuthenticatedByToken('', '', 'token', '');
 ```
 
+### Additional error information
+
+```php
+try {
+    $clientBuilder = new \Omni\Lead\LeadClientBuilder($url);
+    $client = $clientBuilder->buildAuthenticatedByToken('', '', $token, '');
+    $client->getLeadApi()->create($data);
+} catch (\Omni\Lead\Exception\HttpException $e) {
+    $body = $e->getResponse()->getBody();
+    $decodedBody = json_decode($body->getContents(), true);
+}
+```
+
+Note: if `$body->getContents()` is empty perform `$body->rewind()` before decoding json string
+
 ### Lead API
 
 ```php
