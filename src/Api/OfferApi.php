@@ -39,4 +39,12 @@ class OfferApi implements OfferApiInterface
     {
         return $this->resourceClient->createResource(static::OFFER_COMPLETE_URI, [$code], []);
     }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function upsert($code, array $data = [])
+    {
+        return $this->resourceClient->upsertResource(static::OFFER_URI, [$code], $data);
+    }
 }

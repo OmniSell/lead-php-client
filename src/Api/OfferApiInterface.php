@@ -7,7 +7,7 @@ use Omni\Lead\Exception\HttpException;
 /**
  * API to manage the leads.
  */
-interface OfferApiInterface extends GettableResourceInterface
+interface OfferApiInterface extends GettableResourceInterface, UpsertableResourceInterface
 {
     /**
      * Marks a resource as completed
